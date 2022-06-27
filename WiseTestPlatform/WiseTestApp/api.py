@@ -400,9 +400,9 @@ class ScorePerStudent(APIView):
             if student_id is None:
                 return HttpResponseBadRequest("Error: please supply student_id after scores/") 
             if len(Student.objects.filter(pk=pk)) != 1:
-                return HttpResponseBadRequest(f"Error: Test with student_id {student_id} doesn't exist") 
+                return HttpResponseBadRequest(f"Error: Student with student_id {student_id} doesn't exist") 
 
-            scores = list(Score.objects.get(id=int(student_id)).values('id', 'user__id', 'user__first_name', 'user__last_name','test__id', 'test__name', 'marks'))
+            scores = list(Score.objects.filter(user=Student.objects.get(pk=pk)).values('id', 'user__id', 'user__first_name', 'user__last_name','test__id', 'test__name', 'marks'))
 
             json_response = {
                 "scores": scores
