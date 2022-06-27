@@ -1,7 +1,8 @@
 # wiseapp
 ## Project structure
 1. `wiseapp/myenv/` directory contains the files that can be used to create a virtual python environment to run this project.
-2. `wiseapp/WiseTestPlatform/` directory contains the files corresponding to the django project that hosts all the django apps of this project.
+2. `wiseapp/shivam_wiseapp.postman_collection.json` is the postman collection of APIs that can be imported in Postman for testing the APIs of this project.
+3. `wiseapp/WiseTestPlatform/` directory contains the files corresponding to the django project that hosts all the django apps of this project.
     - `wiseapp/WiseTestPlatform/db.sqlite3` is the resident sqlite based in-built DB that's shipped with python. We'd be using this DB as the relational database for our project.
     - `wiseapp/WiseTestPlatform/manage.py` is the django related file used to run management commands. We'll be primarily using it to start the django server etc.
     -  `wiseapp/WiseTestPlatform/WiseTestPlatform/` contains files like `settings.py`, `asgi.py`, `urls.py` etc. The file `urls.py` is of the main relevant file to us here as it contains the list of main endpoints that we'll be exposing as part of our project.
@@ -15,6 +16,7 @@
 2. Ensure that you have python3 installed in your local machine.
 3. `cd` into the newly cloned repository and start the python virtual environment by running `source myenv/bin/activate`
 4. Then run `cd WiseTestPlatform` once, and run `python manage.py runserver` to start the django server. By default, the port is 8000. Thus the app is exposed at `http://localhost:8000`
+5. Import the postman collection present in the root directory of this project to Postman for APIs testing.
 
 ## Database Schema and models.py
 #### Model `User`
