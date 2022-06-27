@@ -1,0 +1,265 @@
+{
+	"info": {
+		"_postman_id": "e7c9776f-79a3-4a7c-b764-d58ec4312665",
+		"name": "Scratchpad",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "teachers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/wisetestapp/teachers/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"wisetestapp",
+						"teachers",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "students",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/wisetestapp/students/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"wisetestapp",
+						"students",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "scores",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/wisetestapp/scores/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"wisetestapp",
+						"scores",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "scores/pk",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/wisetestapp/scores/4/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"wisetestapp",
+						"scores",
+						"4",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "tests_per_teacher",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/wisetestapp/tests_per_teacher/?user_id=5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"wisetestapp",
+						"tests_per_teacher",
+						""
+					],
+					"query": [
+						{
+							"key": "user_id",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "assigned_tests",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/wisetestapp/assigned_tests/?user_id=4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"wisetestapp",
+						"assigned_tests",
+						""
+					],
+					"query": [
+						{
+							"key": "user_id",
+							"value": "4"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "assigned_tests/pk",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/wisetestapp/assigned_tests/4?user_id=4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"wisetestapp",
+						"assigned_tests",
+						"4"
+					],
+					"query": [
+						{
+							"key": "user_id",
+							"value": "4"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "tests",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_id\": \"5\",\n    \"test_name\": \"My Fifth test\",\n    \"start_time\": \"2022-06-25T15:00:00\",\n    \"duration\": \"60\",\n    \"marks_awarded_per_correct_ans\": \"1\",\n    \"marks_deducted_per_incorrect_ans\": \"0\",\n    \"questions\": [\n        {\n            \"question_text\": \"What is the symbol for Hydrogen in periodic table\",\n            \"choice_1\": {\"text\": \"Na\", \"is_correct\": false},\n            \"choice_2\":  {\"text\": \"K\", \"is_correct\": false},\n            \"choice_3\":  {\"text\": \"H\", \"is_correct\": true},\n            \"choice_4\":  {\"text\": \"He\", \"is_correct\": false}\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/wisetestapp/tests/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"wisetestapp",
+						"tests",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "assign_tests",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_id\": \"5\",\n    \"tests\" : [\n        {\n            \"test_id\": \"4\",\n            \"student_id\": \"4\"\n        },\n        {\n            \"test_id\": \"4\",\n            \"student_id\": \"6\"\n        }        \n\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/wisetestapp/assign_tests/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"wisetestapp",
+						"assign_tests",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "submission",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_id\": \"4\",\n    \"test_id\": \"4\",\n    \"answers\" : [\n        {\n            \"question_id\": \"4\",\n            \"chosen_choice_id\": \"15\"\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/wisetestapp/submission/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"wisetestapp",
+						"submission",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
